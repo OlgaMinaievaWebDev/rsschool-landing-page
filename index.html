@@ -53,7 +53,67 @@
     </section>
 
     <section class="favorite-coffee" id="favorite-coffee">
-      <h2>Choose your favorite coffee</h2>
+      <h2>Choose your <span class="favorite-coffee__accent">favorite</span> coffee</h2>
+
+      <div class="slider" role="region" aria-roledescription="carousel" aria-label="Favorite coffee">
+        <button class="slider__control slider__control--previous" type="button" aria-label="Previous slide">
+          Previous
+        </button>
+
+        <div class="slider__viewport" aria-live="polite">
+          <div class="slider__track">
+            <article class="slider__slide slider__slide--active">
+              <img
+                src="./assets/images/coffee-slider-1.png"
+                alt="S'mores Frappuccino"
+                width="530"
+                height="530"
+              >
+              <h3>S’mores Frappuccino</h3>
+              <p>
+                This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with
+                oat milk.
+              </p>
+              <p class="slider__price">$5.50</p>
+            </article>
+
+            <article class="slider__slide">
+              <img
+                src="./assets/images/coffee-slider-2.png"
+                alt="Caramel Macchiato"
+                width="530"
+                height="530"
+              >
+              <h3>Caramel Macchiato</h3>
+              <p>
+                Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick
+                foam.
+              </p>
+              <p class="slider__price">$5.00</p>
+            </article>
+
+            <article class="slider__slide">
+              <img
+                src="./assets/images/coffee-slider-3.png"
+                alt="Ice coffee"
+                width="530"
+                height="530"
+              >
+              <h3>Ice coffee</h3>
+              <p>A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.</p>
+              <p class="slider__price">$4.50</p>
+            </article>
+          </div>
+        </div>
+
+        <button class="slider__control slider__control--next" type="button" aria-label="Next slide">Next</button>
+
+        <div class="slider__indicators" aria-hidden="true">
+          <span class="slider__indicator slider__indicator--active"></span>
+          <span class="slider__indicator"></span>
+          <span class="slider__indicator"></span>
+        </div>
+      </div>
     </section>
 
     <section class="about" id="about">
@@ -61,12 +121,107 @@
         Resource is the perfect and cozy place where you can enjoy a variety of hot beverages, relax, catch up with
         friends, or get some work done.
       </h2>
+      <div class="about__gallery">
+        <figure class="about__item">
+          <img
+            src="./assets/images/about-1.jpg"
+            alt="Woman enjoying a cup of coffee by the cafe window"
+            width="660"
+            height="590"
+            loading="lazy"
+          >
+        </figure>
+        <figure class="about__item">
+          <img
+            src="./assets/images/about-2.jpg"
+            alt="Coffee cup and saucer on a table decorated with warm string lights"
+            width="660"
+            height="590"
+            loading="lazy"
+          >
+        </figure>
+        <figure class="about__item">
+          <img
+            src="./assets/images/about-3.jpg"
+            alt="Man drinking coffee while working on a laptop in the cafe"
+            width="660"
+            height="590"
+            loading="lazy"
+          >
+        </figure>
+        <figure class="about__item">
+          <img
+            src="./assets/images/about-4.jpg"
+            alt="Couple sharing a moment over coffee at a cafe table"
+            width="660"
+            height="590"
+            loading="lazy"
+          >
+        </figure>
+      </div>
     </section>
 
     <section class="mobile-app" id="mobile-app">
-      <h2>Download our apps to start ordering</h2>
+      <div class="mobile-app__content">
+        <h2><span class="mobile-app__accent">Download</span> our app to start ordering</h2>
+        <p>
+          Download the Resource app today and experience the comfort of ordering your favorite coffee from wherever
+          you are
+        </p>
+        <div class="mobile-app__downloads">
+          <!-- This fictional app has no store URLs yet. -->
+          <button class="mobile-app__download" type="button" disabled>
+            <span class="mobile-app__download-label">Available on the</span>
+            <span class="mobile-app__download-store">App Store</span>
+          </button>
+          <button class="mobile-app__download" type="button" disabled>
+            <span class="mobile-app__download-label">Available on</span>
+            <span class="mobile-app__download-store">Google Play</span>
+          </button>
+        </div>
+      </div>
+      <img
+        class="mobile-app__image"
+        src="./assets/images/mobile-screens.png"
+        alt="Two phones showing the Resource app's coffee menu and drink details"
+        width="630"
+        height="630"
+        loading="lazy"
+      >
     </section>
   </main>
+
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__brand">
+      <h2>Sip, Savor, Smile. <span class="site-footer__accent">It’s coffee time!</span></h2>
+      <ul class="site-footer__socials" aria-label="Social media">
+        <li>
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="site-footer__contacts">
+      <h3>Contact us</h3>
+      <address class="site-footer__address">
+        <a
+          href="https://www.google.com/maps/search/?api=1&amp;query=8558%20Green%20Rd%2C%20Los%20Angeles"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          8558 Green Rd., LA
+        </a>
+        <a href="tel:+16035550123">+1 (603) 555-0123</a>
+      </address>
+      <p class="site-footer__hours">Mon-Sat: <time datetime="09:00">9:00</time>–<time datetime="23:00">23:00</time></p>
+    </div>
+  </footer>
 </body>
 
 </html>
