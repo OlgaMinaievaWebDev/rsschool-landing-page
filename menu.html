@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="icon" href="./assets/icons/logo.svg" type="image/svg+xml">
+  <script src="./scripts/theme.js" defer></script>
+  <title>Menu | Coffee House</title>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="site-header__logo" href="./index.html">
+      <img src="./assets/icons/logo.svg" alt="Coffee House" width="100" height="60">
+    </a>
+
+    <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation">
+      <ul class="site-nav__list">
+        <li><a href="./index.html#favorite-coffee">Favorite coffee</a></li>
+        <li><a href="./index.html#about">About</a></li>
+        <li><a href="./index.html#mobile-app">Mobile app</a></li>
+        <li><a href="./index.html#contacts">Contact us</a></li>
+        <li><a href="./menu.html" aria-current="page">Menu</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="primary-navigation"
+        aria-expanded="false">
+        Menu
+      </button>
+    </div>
+  </header>
+
+  <main class="menu">
+    <h1 class="menu__heading">Behind each of our cups hides an amazing surprise</h1>
+    <div class="menu__categories" role="group" aria-label="Product categories">
+      <button class="menu__category" type="button" data-category="coffee" aria-pressed="true">Coffee</button>
+      <button class="menu__category" type="button" data-category="tea" aria-pressed="false">Tea</button>
+      <button class="menu__category" type="button" data-category="dessert" aria-pressed="false">Dessert</button>
+    </div>
+
+    <ul class="menu__products" aria-label="Coffee products">
+      <li class="menu__item">
+        <article class="product-card">
+          <img
+            class="product-card__image"
+            src="./assets/images/coffee-1.jpg"
+            alt="Irish coffee"
+            width="340"
+            height="340"
+            loading="lazy"
+          >
+          <div class="product-card__content">
+            <h2 class="product-card__title">Irish coffee</h2>
+            <p class="product-card__description">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+            <p class="product-card__price">$7.00</p>
+          </div>
+        </article>
+      </li>
+      <li class="menu__item">
+        <article class="product-card">
+          <img
+            class="product-card__image"
+            src="./assets/images/coffee-2.jpg"
+            alt="Kahlua coffee"
+            width="340"
+            height="340"
+            loading="lazy"
+          >
+          <div class="product-card__content">
+            <h2 class="product-card__title">Kahlua coffee</h2>
+            <p class="product-card__description">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
+            <p class="product-card__price">$7.00</p>
+          </div>
+        </article>
+      </li>
+      <li class="menu__item">
+        <article class="product-card">
+          <img
+            class="product-card__image"
+            src="./assets/images/coffee-3.jpg"
+            alt="Honey raf"
+            width="340"
+            height="340"
+            loading="lazy"
+          >
+          <div class="product-card__content">
+            <h2 class="product-card__title">Honey raf</h2>
+            <p class="product-card__description">Espresso with frothed milk, cream and aromatic honey</p>
+            <p class="product-card__price">$5.50</p>
+          </div>
+        </article>
+      </li>
+      <li class="menu__item">
+        <article class="product-card">
+          <img
+            class="product-card__image"
+            src="./assets/images/coffee-4.jpg"
+            alt="Ice cappuccino"
+            width="340"
+            height="340"
+            loading="lazy"
+          >
+          <div class="product-card__content">
+            <h2 class="product-card__title">Ice cappuccino</h2>
+            <p class="product-card__description">Cappuccino with soft thick foam in summer version with ice</p>
+            <p class="product-card__price">$5.00</p>
+          </div>
+        </article>
+      </li>
+      <li class="menu__item">
+        <article class="product-card">
+          <img
+            class="product-card__image"
+            src="./assets/images/coffee-5.jpg"
+            alt="Espresso"
+            width="340"
+            height="340"
+            loading="lazy"
+          >
+          <div class="product-card__content">
+            <h2 class="product-card__title">Espresso</h2>
+            <p class="product-card__description">Classic black coffee</p>
+            <p class="product-card__price">$4.50</p>
+          </div>
+        </article>
+      </li>
+      <li class="menu__item">
+        <article class="product-card">
+          <img
+            class="product-card__image"
+            src="./assets/images/coffee-6.jpg"
+            alt="Latte"
+            width="340"
+            height="340"
+            loading="lazy"
+          >
+          <div class="product-card__content">
+            <h2 class="product-card__title">Latte</h2>
+            <p class="product-card__description">Espresso coffee with the addition of steamed milk and dense milk foam</p>
+            <p class="product-card__price">$5.50</p>
+          </div>
+        </article>
+      </li>
+      <li class="menu__item">
+        <article class="product-card">
+          <img
+            class="product-card__image"
+            src="./assets/images/coffee-7.jpg"
+            alt="Latte macchiato"
+            width="340"
+            height="340"
+            loading="lazy"
+          >
+          <div class="product-card__content">
+            <h2 class="product-card__title">Latte macchiato</h2>
+            <p class="product-card__description">Espresso with frothed milk and chocolate</p>
+            <p class="product-card__price">$5.50</p>
+          </div>
+        </article>
+      </li>
+      <li class="menu__item">
+        <article class="product-card">
+          <img
+            class="product-card__image"
+            src="./assets/images/coffee-8.jpg"
+            alt="Coffee with cognac"
+            width="340"
+            height="340"
+            loading="lazy"
+          >
+          <div class="product-card__content">
+            <h2 class="product-card__title">Coffee with cognac</h2>
+            <p class="product-card__description">Fragrant black coffee with cognac and whipped cream</p>
+            <p class="product-card__price">$6.50</p>
+          </div>
+        </article>
+      </li>
+    </ul>
+    <button class="menu__show-more" type="button">Show more</button>
+  </main>
+
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__brand">
+      <h2>Sip, Savor, Smile. <span class="site-footer__accent">It’s coffee time!</span></h2>
+      <ul class="site-footer__socials" aria-label="Social media">
+        <li>
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="site-footer__contacts">
+      <h3>Contact us</h3>
+      <address class="site-footer__address">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=8558%20Green%20Rd%2C%20Los%20Angeles"
+          target="_blank" rel="noopener noreferrer">
+          8558 Green Rd., LA
+        </a>
+        <a href="tel:+16035550123">+1 (603) 555-0123</a>
+      </address>
+      <p class="site-footer__hours">Mon-Sat: <time datetime="09:00">9:00</time>–<time datetime="23:00">23:00</time></p>
+    </div>
+  </footer>
+</body>
+
+</html>
