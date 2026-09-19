@@ -4,6 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;1,600&amp;display=swap"
+  >
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="icon" href="./assets/icons/logo.svg" type="image/svg+xml">
   <script src="./scripts/theme.js" defer></script>
@@ -11,7 +17,7 @@
 </head>
 
 <body>
-  <header class="site-header">
+  <header class="site-header container">
     <a class="site-header__logo" href="./index.html">
       <img src="./assets/icons/logo.svg" alt="Coffee House" width="100" height="60">
     </a>
@@ -35,8 +41,8 @@
     </div>
   </header>
 
-  <main class="menu">
-    <h1 class="menu__heading">Behind each of our cups hides an amazing surprise</h1>
+  <main class="menu container">
+    <h1 class="menu__heading">Behind each of our cups hides an <span class="menu__accent">amazing surprise</span></h1>
     <div class="menu__categories" role="group" aria-label="Product categories">
       <button class="menu__category" type="button" data-category="coffee" aria-pressed="true">Coffee</button>
       <button class="menu__category" type="button" data-category="tea" aria-pressed="false">Tea</button>
@@ -184,7 +190,8 @@
     <button class="menu__show-more" type="button">Show more</button>
   </main>
 
-  <footer class="site-footer" id="contacts">
+  <footer class="site-footer container" id="contacts">
+    <div class="site-footer__inner">
     <div class="site-footer__brand">
       <h2>Sip, Savor, Smile. <span class="site-footer__accent">It’s coffee time!</span></h2>
       <ul class="site-footer__socials" aria-label="Social media">
@@ -210,6 +217,7 @@
         <a href="tel:+16035550123">+1 (603) 555-0123</a>
       </address>
       <p class="site-footer__hours">Mon-Sat: <time datetime="09:00">9:00</time>–<time datetime="23:00">23:00</time></p>
+    </div>
     </div>
   </footer>
 </body>
