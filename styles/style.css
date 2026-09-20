@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light;
   --text-primary: #403f3d;
   --text-inverse: #e1d4c9;
   --text-accent: #b0907a;
@@ -10,6 +11,7 @@
 }
 
 [data-theme="dark"] {
+  color-scheme: dark;
   --text-primary: #e1d4c9;
   --text-inverse: #e1d4c9;
   --text-accent: #b0907a;
@@ -34,6 +36,16 @@ body {
   line-height: 1.5;
   background-color: var(--bg-page);
   color: var(--text-primary);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 h1,
@@ -74,6 +86,15 @@ textarea {
 
 .site-header__logo {
   flex: 0 0 100px;
+}
+
+.site-header__logo-dark,
+[data-theme="dark"] .site-header__logo-light {
+  display: none;
+}
+
+[data-theme="dark"] .site-header__logo-dark {
+  display: block;
 }
 
 .site-nav__list {
@@ -139,6 +160,167 @@ textarea {
 
 .menu-toggle {
   display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--border-inverse);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 16px;
+  height: 1px;
+  background: currentColor;
+  transition: transform 200ms ease;
+}
+
+.menu-toggle[aria-expanded="true"] span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 88px;
+  height: 44px;
+  padding: 3px;
+  border: 1px solid var(--border-primary);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.theme-toggle > span {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: background-color 200ms ease;
+}
+
+.theme-toggle__light {
+  background: var(--text-accent);
+  color: var(--text-inverse);
+}
+
+[data-theme="dark"] .theme-toggle__light {
+  background: transparent;
+}
+
+[data-theme="dark"] .theme-toggle__dark {
+  background: var(--text-accent);
+}
+
+.theme-toggle span::before,
+.site-nav a[href="./menu.html"]::before,
+.hero__menu-link::after,
+.mobile-app__download::before,
+.site-footer__address a::before {
+  content: "";
+  display: inline-block;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  background: currentColor;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+.theme-toggle .theme-toggle__light::before {
+  --icon: url("../assets/icons/Sun.svg");
+  width: 22px;
+  height: 22px;
+}
+
+.theme-toggle .theme-toggle__dark::before {
+  --icon: url("../assets/icons/Moon.svg");
+  width: 18px;
+  height: 18px;
+}
+
+.site-nav a[href="./menu.html"]::before {
+  --icon: url("../assets/icons/coffee-cup.svg");
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.hero__menu-link::after {
+  --icon: url("../assets/icons/coffee-cup.svg");
+  margin-left: 8px;
+}
+
+.mobile-app__download::before {
+  --icon: url("../assets/icons/apple.svg");
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  width: 32px;
+  height: 32px;
+}
+
+.mobile-app__download:nth-child(2)::before {
+  --icon: url("../assets/icons/google.svg");
+}
+
+.site-footer__address a::before {
+  --icon: url("../assets/icons/pin-alt.svg");
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.site-footer__address a[href^="tel:"]::before {
+  --icon: url("../assets/icons/phone.svg");
+}
+
+.site-footer__hours::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+  background: url("../assets/icons/clock.png") center / contain no-repeat;
+}
+
+.site-footer__socials a[href*="instagram"]::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  background: currentColor;
+  mask: url("../assets/icons/instagram.svg") center / contain no-repeat;
+}
+
+.slider__control span {
+  width: 24px;
+  height: 24px;
+  font-size: 0;
+  background: currentColor;
+  mask: url("../assets/icons/arrow-left.svg") center / contain no-repeat;
+}
+
+.slider__control--next span {
+  mask-image: url("../assets/icons/arrow-right.svg");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-toggle span,
+  .theme-toggle > span {
+    transition: none;
+  }
 }
 
 .hero {
@@ -149,6 +331,42 @@ textarea {
   background-position: center;
   background-size: cover;
   color: var(--text-inverse);
+}
+
+.theme-toggle,
+.menu-toggle,
+.hero__menu-link,
+.mobile-app__download,
+.site-header__logo {
+  transition: background-color 200ms ease, color 200ms ease, opacity 200ms ease;
+}
+
+@media (hover: hover) {
+  .theme-toggle:hover,
+  .menu-toggle:hover {
+    background-color: var(--border-primary);
+  }
+
+  .hero__menu-link:hover,
+  .site-header__logo:hover {
+    opacity: 0.8;
+  }
+
+  .mobile-app__download:hover {
+    background-color: var(--bg-container);
+    color: var(--text-inverse);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .menu-toggle,
+  .hero__menu-link,
+  .mobile-app__download,
+  .site-header__logo,
+  .product-card {
+    transition: none;
+  }
 }
 
 .hero__content {
@@ -437,13 +655,14 @@ textarea {
 }
 
 .mobile-app__download {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   width: 200px;
   min-height: 64px;
-  padding: 12px 20px;
+  padding: 12px 20px 12px 60px;
   border: 1px solid var(--border-inverse);
   border-radius: 100px;
   background-color: transparent;
@@ -550,6 +769,7 @@ textarea {
 }
 
 .product-card {
+  transition: border-color 200ms ease, box-shadow 200ms ease;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -585,9 +805,10 @@ textarea {
   margin-top: auto;
 }
 
-/* All products remain visible until progressive loading is implemented. */
+/* Part 1 keeps all cards available; progressive loading follows in Part 2. */
 .menu__show-more {
-  display: none;
+  display: block;
+  margin: 40px auto 0;
 }
 
 @media (hover: hover) {
@@ -595,6 +816,11 @@ textarea {
   .menu__show-more:hover {
     background-color: var(--bg-container);
     color: var(--text-inverse);
+  }
+
+  .product-card:hover {
+    border-color: var(--border-inverse);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
   }
 }
 

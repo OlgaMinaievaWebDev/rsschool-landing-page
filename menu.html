@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./scripts/theme.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -12,14 +13,14 @@
   >
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="icon" href="./assets/icons/logo.svg" type="image/svg+xml">
-  <script src="./scripts/theme.js" defer></script>
   <title>Menu | Coffee House</title>
 </head>
 
 <body>
   <header class="site-header container">
     <a class="site-header__logo" href="./index.html">
-      <img src="./assets/icons/logo.svg" alt="Coffee House" width="100" height="60">
+      <img class="site-header__logo-light" src="./assets/icons/logo.svg" alt="Coffee House" width="100" height="60">
+      <img class="site-header__logo-dark" src="./assets/icons/logo-dark.svg" alt="Coffee House" width="100" height="60">
     </a>
 
     <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation">
@@ -33,10 +34,14 @@
     </nav>
 
     <div class="site-header__actions">
-      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
+        <span class="theme-toggle__light" aria-hidden="true"></span>
+        <span class="theme-toggle__dark" aria-hidden="true"></span>
+      </button>
       <button class="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="primary-navigation"
         aria-expanded="false">
-        Menu
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </button>
     </div>
   </header>
