@@ -450,6 +450,16 @@ textarea {
   overflow: hidden;
 }
 
+.slider__track {
+  display: flex;
+  transition: transform 400ms ease;
+}
+
+.slider__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
 .slider__slide img {
   margin-inline: auto;
   margin-bottom: 20px;
@@ -514,7 +524,8 @@ textarea {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .slider__control {
+  .slider__control,
+  .slider__track {
     transition: none;
   }
 }
@@ -797,6 +808,15 @@ textarea {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.menu__status--loaded {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .menu__item {
