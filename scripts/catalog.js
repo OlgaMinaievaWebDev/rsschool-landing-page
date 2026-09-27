@@ -2,9 +2,21 @@
   const list = document.querySelector('.menu__products');
   const categories = [...document.querySelectorAll('.menu__category')];
   const status = document.querySelector('.menu__status');
-  if (!list || !categories.length || !status) return;
+  const showMore = document.querySelector('.menu__show-more');
+  if (!list || !categories.length || !status || !showMore) return;
 
   let products = [];
+  let selectedCategory = categories[0].dataset.category;
+  let expanded = false;
+  const mobile = window.matchMedia('(max-width: 768px)');
+
+  const updateVisibility = () => {
+    const items = [...list.children];
+    const limit = mobile.matches && !expanded ? 4 : items.length;
+    items.forEach((item, index) => { item.hidden = index >= limit; });
+    showMore.hidden = items.length <= limit;
+    status.textContent = `${Math.min(limit, items.length)} of ${items.length} ${selectedCategory} products shown`;
+  };
   const createCard = (product) => {
     const item = document.createElement('li');
     item.className = 'menu__item';
@@ -42,15 +54,33 @@
 
   const selectCategory = (selected) => {
     const category = selected.dataset.category;
+    selectedCategory = category;
+    expanded = false;
     categories.forEach((button) => {
       button.setAttribute('aria-pressed', String(button === selected));
     });
     const matching = products.filter((product) => product.category === category);
     list.replaceChildren(...matching.map(createCard));
     list.setAttribute('aria-label', `${category} products`);
-    status.textContent = `${matching.length} ${category} products`;
+    updateVisibility();
     status.classList.add('menu__status--loaded');
   };
+
+  showMore.addEventListener('click', () => {
+    expanded = true;
+    updateVisibility();
+    // Keep keyboard users at the first newly revealed product.
+    const firstNewItem = list.children[4];
+    if (firstNewItem) {
+      firstNewItem.tabIndex = -1;
+      firstNewItem.focus({ preventScroll: true });
+    }
+  });
+
+  mobile.addEventListener('change', () => {
+    expanded = false;
+    if (products.length) updateVisibility();
+  });
 
   categories.forEach((button) => {
     button.disabled = true;

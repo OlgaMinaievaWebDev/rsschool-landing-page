@@ -860,7 +860,11 @@ textarea {
   margin-top: auto;
 }
 
-/* Part 1 keeps all cards available; progressive loading follows in Part 2. */
+.menu__item[hidden],
+.menu__show-more[hidden] {
+  display: none;
+}
+
 .menu__show-more {
   display: block;
   margin: 40px auto 0;
