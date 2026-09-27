@@ -92,6 +92,22 @@
     </div>
     </div>
   </footer>
+  <dialog class="product-modal" aria-labelledby="product-modal-title" aria-describedby="product-modal-description">
+    <div class="product-modal__layout">
+      <div class="product-modal__preview"><img class="product-modal__image" alt="" width="340" height="340"></div>
+      <div class="product-modal__details">
+        <div class="product-modal__title">
+          <h2 id="product-modal-title"></h2>
+          <p id="product-modal-description"></p>
+        </div>
+        <fieldset class="product-modal__options"><legend>Size</legend><div class="product-modal__sizes product-modal__choices"></div></fieldset>
+        <fieldset class="product-modal__options"><legend>Additives</legend><div class="product-modal__additives product-modal__choices"></div></fieldset>
+        <p class="product-modal__total">Total: <span class="product-modal__price" aria-live="polite"></span></p>
+        <div class="product-modal__notice"><img src="./assets/icons/info-empty.svg" alt="" width="16" height="16"><p>The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p></div>
+        <button class="product-modal__close" type="button" autofocus>Close</button>
+      </div>
+    </div>
+  </dialog>
 </body>
 
 </html>
