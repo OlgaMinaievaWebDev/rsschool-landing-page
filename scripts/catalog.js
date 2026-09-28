@@ -162,11 +162,8 @@
     expanded = true;
     updateVisibility();
     // Keep keyboard users at the first newly revealed product.
-    const firstNewItem = list.children[4];
-    if (firstNewItem) {
-      firstNewItem.tabIndex = -1;
-      firstNewItem.focus({ preventScroll: true });
-    }
+    const firstNewCard = list.children[4]?.querySelector('.product-card');
+    firstNewCard?.focus({ preventScroll: true });
   });
 
   mobile.addEventListener('change', () => {
